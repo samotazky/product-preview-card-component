@@ -1,0 +1,136 @@
+$background-color: hsl(30, 38%, 92%);
+$green-color: hsl(158, 36%, 37%);
+$dark-green-color: hsl(158, 36%, 20%);
+$primary-color: hsl(228, 12%, 48%);
+$secondary-color: hsl(212, 21%, 14%);
+$product-color: hsl(0, 0%, 100%);
+
+$primary-font: 'Fraunces', serif;
+$secondary-font: 'Montserrat', sans-serif;
+
+body {
+    background: $background-color;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.product {
+    background: $product-color;
+    margin: 2em 1em;
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+}
+
+.product-image-desktop {
+    display: none;
+}
+
+.product-content {
+    padding: 1em 1.3em;
+}
+
+
+.product-category,
+.product-details {
+    font-family: $secondary-font;
+    color: $primary-color;
+}
+
+.product-category {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: .8em;
+    padding: .7em 0;
+}
+
+.product-title {
+    color: $secondary-color;
+    font-size: 2em;
+    line-height: 1em;
+    font-family: $primary-font;
+}
+
+.product-details {
+    padding: 1em 0;
+    font-size: 0.9em;
+}
+
+
+.flex-content {
+    display: flex;
+    align-items: center;
+    padding-bottom: .5em;
+}
+
+.product-new-price {
+    color: $green-color;
+    font-family: $primary-font;
+    font-size: 2em;
+    padding-right: .5em;
+}
+
+.product-old-price {
+    font-family: $secondary-font;
+    color: $primary-color;
+    font-size: .9em;
+    text-decoration: line-through;
+}
+
+.product-cart-btn {
+    display: flex;
+    width: 100%;
+    height: 3em;
+    background: $green-color;
+    border-radius: 6px;
+    color: $product-color;
+    font-family: $secondary-font;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cart-icon {
+    background-image: url(/images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+    margin-right: .5em;
+}
+
+.product-cart-btn:is(:hover, :focus) {
+    background: $dark-green-color;
+}
+
+@media screen and (min-width: 600px) {
+
+    main {
+        margin: 0 auto;
+    }
+    
+    .product {
+        grid-template-columns: 50% 50%;
+    }
+
+    .product-image-mobile {
+        display: none;
+    }
+
+    .product-image-desktop {
+        display: block;
+    }
+
+    .product-category {
+        padding: 1em 0;
+    }
+
+    .product-details {
+        padding-top: 2em;
+    }
+
+    .flex-content {
+        padding-bottom: 2em;
+    }
+}
